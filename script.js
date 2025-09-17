@@ -10,7 +10,7 @@ function showLetter() {
     console.log("Autoplay dicegah browser:", err);
   });
 
-  // 🎥 Tampilkan video
+  // 🎥 Video (selalu muted)
   const videoBox = document.getElementById("videoBox");
   const myVideo = document.getElementById("myVideo");
 
@@ -18,8 +18,8 @@ function showLetter() {
     const letterBox = document.getElementById("letterBox");
     const typedText = document.getElementById("typedText");
     letterBox.style.display = "block";
-    videoBox.style.display = "block"; // munculin video
-    myVideo.play(); // play otomatis
+    videoBox.style.display = "block";
+    myVideo.play(); // jalanin video, tapi muted
 
     let i = 0;
     function typeWriter() {

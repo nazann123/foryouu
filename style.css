@@ -11,8 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: row; /* horizontal biar surat & video bisa sejajar */
-  gap: 40px; /* jarak surat dengan video */
+  flex-direction: row; /* default: surat & video sejajar */
+  gap: 40px;
   overflow: hidden;
 }
 .intro {
@@ -80,7 +80,7 @@ body {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  width: 100px; /* dikecilin biar ga nutupin text */
+  width: 100px; /* perkecil */
   opacity: 0.8;
   pointer-events: none;
   transform: rotate(-2deg);
@@ -91,4 +91,25 @@ body {
 .video-box video {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 Responsive: di HP jadi vertikal */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .letter {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .video-box video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
