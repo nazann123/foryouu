@@ -10,10 +10,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-direction: row; /* default: surat & video sejajar */
+  height: 100vh;           /* 🖥️ desktop tetap fullscreen */
+  flex-direction: row;     /* default horizontal */
   gap: 40px;
-  overflow: hidden;
+  overflow: hidden;        /* ❌ desktop ga bisa scroll */
 }
 .intro {
   text-align: center;
@@ -80,7 +80,7 @@ body {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  width: 100px; /* perkecil */
+  width: 100px; /* perkecil biar ga nutupin teks */
   opacity: 0.8;
   pointer-events: none;
   transform: rotate(-2deg);
@@ -93,11 +93,13 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-/* 📱 Responsive: di HP jadi vertikal */
+/* 📱 Responsive untuk HP */
 @media (max-width: 768px) {
   body {
-    flex-direction: column;
-    height: auto;
+    flex-direction: column;  /* tumpuk vertikal */
+    height: auto;            /* biar menyesuaikan isi */
+    min-height: 100vh;       /* tetap penuh layar */
+    overflow-y: auto;        /* ✅ bisa scroll di HP */
     padding: 20px;
   }
 
